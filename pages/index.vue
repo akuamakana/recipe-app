@@ -1,6 +1,6 @@
 <template>
   <div class="container w-screen">
-    <Navbar />
+    <Navbar :search="search" />
     <div class="flex justify-center w-screen">
       <div class="grid grid-cols-4 gap-4 w-3/4">
         <RecipeCard v-for="recipe in recipes.recipes" :key="recipe.id" :recipe="recipe" />
@@ -20,10 +20,12 @@ export default {
     return { recipes }
   },
   fetchOnServer: false,
-  data () {
-    return {
+  methods: {
+    search () {
+      console.log('parent')
     }
   }
+
 }
 </script>
 

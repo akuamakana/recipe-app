@@ -4,6 +4,8 @@
 
 <script>
 export default {
-  props: ['recipe']
+  props: {
+    recipe: Object
+  }
 }
 </script>

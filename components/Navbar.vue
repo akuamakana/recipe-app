@@ -4,12 +4,14 @@
       <div class="p-2 text-2xl text-white font-bold">
         Recipe App
       </div>
-      <div class="p-2 text-2xl text-white font-bold">
-        Recipe
-      </div>
-      <div>
-        <input class="border rounded-lg p-2" type="text" placeholder="Search...">
-      </div>
+      <SearchBar />
     </div>
   </div>
 </template>
+
+<script>
+import SearchBar from '~/components/SearchBar'
+export default {
+  components: SearchBar
+}
+</script>

@@ -12,7 +12,9 @@ import RecipeCardText from '~/components/RecipeCardText'
 export default {
   components: RecipeCardImage,
   RecipeCardText,
-  props: ['recipe'],
+  props: {
+    recipe: Object
+  },
   methods: {
     loadRecipe () {
 
