@@ -1,5 +1,5 @@
 <template>
-  <div class="bg-gradient-to-r from-orange-400 to-red-500 w-screen flex justify-center p-2">
+  <div class=" w-screen flex justify-center p-2">
     <div class="flex justify-between w-3/4 items-center">
       <div class="p-2 text-2xl text-white font-bold">
         Recipe App

@@ -1,6 +1,6 @@
 <template>
   <div>
-    <input v-model="searchBox" class="border rounded-lg p-2" type="text" placeholder="Search..." @keyup="search(searchBox)">
+    <input v-model="searchBox" class="border rounded-lg p-2" type="text" placeholder="Search..." @keydown.enter="search(searchBox)">
   </div>
 </template>
 
@@ -10,7 +10,6 @@ export default {
   data () {
     return {
       searchBox: ''
-      // $axios: this.$nuxt.$axios
     }
   },
   methods: {

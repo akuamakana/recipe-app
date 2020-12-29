@@ -33,4 +33,9 @@ export default {
   body {
     width: 100vw;
   }
+  body {
+    background: rgb(68,77,97);
+    background: linear-gradient(90deg, rgba(68,77,97,1) 0%, rgba(21,27,45,1) 100%);
+    @apply text-white;
+  }
 </style>

@@ -1,8 +1,8 @@
 /* eslint-disable vue/require-prop-types */
 <template>
-  <div class="grid container w-full border shadow-lg">
+  <div class="grid container w-full rounded-lg shadow-lg bg-white">
     <RecipeCardImage :recipe="recipe" />
-    <RecipeCardText :recipe="recipe" />
+    <RecipeCardText :recipe="recipe" @goToRecipe="loadRecipe" />
   </div>
 </template>
 
@@ -17,7 +17,8 @@ export default {
   },
   methods: {
     loadRecipe () {
-
+      this.$store.state.currentRecipe = this.recipe
+      this.$router.push(`/recipe/${this.recipe.id}`)
     }
   }
 }

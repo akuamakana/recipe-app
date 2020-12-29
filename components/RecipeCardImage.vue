@@ -1,5 +1,5 @@
 <template>
-  <img class="object-cover" :src="recipe.image" alt="recipe.title">
+  <img class="object-contain rounded-t-lg" :src="recipe.image" alt="recipe.title">
 </template>
 
 <script>
