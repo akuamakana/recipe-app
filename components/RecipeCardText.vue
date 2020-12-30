@@ -1,7 +1,7 @@
 <template>
-  <div class="p-4 text-black">
+  <div class="p-4 text-black flex flex-col justify-between">
     <!-- Recipe Title -->
-    <h1 class="mb-2 text-xl text-center uppercase font-bold">
+    <h1 class="mb-2 text-xl text-center font-bold">
       {{ recipe.title }}
     </h1>
     <!-- View Recipe Button -->
@@ -9,33 +9,6 @@
       <button type="submit" class="px-4 py-2 mt-2 rounded w-full font-bold border-2 border-black" @click="$emit('goToRecipe')">
         View Recipe
       </button>
-    </div>
-    <div class="grid">
-      <!-- Recipe Summary -->
-      <div class="m-4">
-        <h4 v-html="recipe.summary.slice(0,140).concat('...')" />
-      </div>
-      <!-- Recipe Details -->
-      <div class="grid grid-cols-3 justify-between mb-2 divide-x text-gray-600 text-center uppercase">
-        <div>
-          <h3>Minutes</h3>
-          <h3 class="text-black font-bold">
-            {{ recipe.readyInMinutes }}
-          </h3>
-        </div>
-        <div>
-          <h3>Servings</h3>
-          <h3 class="text-black font-bold">
-            {{ recipe.servings }}
-          </h3>
-        </div>
-        <div>
-          <h3>Rating</h3>
-          <h3 class="text-black font-bold">
-            3/5
-          </h3>
-        </div>
-      </div>
     </div>
   </div>
 </template>

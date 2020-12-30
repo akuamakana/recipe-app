@@ -10,18 +10,18 @@
 </template>
 
 <script>
+import { mapActions } from 'vuex'
 import Navbar from '~/components/Navbar'
 import RecipeCard from '~/components/RecipeCard'
 export default {
   components: Navbar,
   RecipeCard,
+  mounted () {
+    this.getRandomRecipes()
+  },
   methods: {
-    async fetchRecipes () {
-      const recipes = await this.$axios.$get('https://api.spoonacular.com/recipes/random?number=10&tags=vegetarian,dessert&apiKey=6411032cc1b64ea0a7269e0da6e7fb58')
-      this.$store.state.currentRecipes = recipes
-    }
+    ...mapActions({ getRandomRecipes: 'getRandomRecipes' })
   }
-
 }
 </script>
 
