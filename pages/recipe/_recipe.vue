@@ -11,7 +11,7 @@
 </template>
 
 <script>
-import { mapState } from 'vuex'
+import { mapActions } from 'vuex'
 import Header from '~/components/CurrentRecipe/Header'
 import Steps from '~/components/CurrentRecipe/Steps'
 import Ingredients from '~/components/CurrentRecipe/Ingredients'
@@ -19,8 +19,15 @@ export default {
   components: Header,
   Steps,
   Ingredients,
-  computed: mapState(['currentRecipe'])
+  mounted () {
+    const id = this.$route.params.recipe
+    this.getCurrentRecipe(id)
+  },
+  methods: {
+    ...mapActions({ getCurrentRecipe: 'getCurrentRecipe' })
+  }
 }
+
 </script>
 
 <style scoped>
@@ -37,4 +44,5 @@ export default {
     background: #FCBE84;
     border-radius: 10px;
   }
+
 </style>

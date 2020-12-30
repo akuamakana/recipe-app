@@ -3,7 +3,7 @@
     <h1 class="text-5xl px-8 font-bold mb-2">
       Steps
     </h1>
-    <div class="overflow-auto p-8">
+    <div class="overflow-auto p-8 relative">
       <div v-for="step in currentRecipe.analyzedInstructions[0].steps" :key="step.number" class="text-2xl leading-relaxed mb-6">
         <span class="text-yellow-600 uppercase">
           {{ step.number }}.
@@ -37,4 +37,10 @@ export default {
     background: #FCBE84;
     border-radius: 10px;
   }
+.gradient {
+    content:'';
+    height: 80px;
+    background: linear-gradient(to top, rgba(251, 251, 251, 1) 0%, rgba(251, 251, 251, 0) 100%);
+    position: relative;
+}
 </style>

@@ -17,7 +17,6 @@ export default {
   },
   methods: {
     loadRecipe () {
-      this.$store.state.currentRecipe = this.recipe
       this.$router.push(`/recipe/${this.recipe.id}`)
     }
   }

@@ -1,7 +1,16 @@
 <template>
-  <div>
-    <input v-model="searchBox" class="border rounded-lg p-2" type="text" placeholder="Search..." @keydown.enter="search(searchBox)">
-  </div>
+  <form class="flex" @submit.prevent>
+    <input
+      v-model="searchBox"
+      type="search"
+      class="rounded-lg p-4 text-black opacity-25 transition duration-300 ease-in-out focus:outline-none focus:opacity-100"
+      placeholder="Search..."
+      @keyup.enter="search(searchBox)"
+    >
+    <button @click="getRandomRecipes">
+      Test
+    </button>
+  </form>
 </template>
 
 <script>
@@ -13,7 +22,7 @@ export default {
     }
   },
   methods: {
-    ...mapActions({ search: 'search' })
+    ...mapActions({ search: 'search', getRandomRecipes: 'getRandomRecipes' })
   }
 }
 </script>

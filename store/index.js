@@ -1,5 +1,5 @@
 export const state = () => ({
-  currentRecipes: [],
+  currentRecipes: {},
   currentRecipe: {
     vegetarian: true,
     vegan: false,
@@ -845,11 +845,28 @@ export const state = () => ({
   }
 })
 
-const searchUrl = 'https://api.spoonacular.com/recipes/complexSearch?apiKey=6411032cc1b64ea0a7269e0da6e7fb58&query='
+export const mutations = {
+  SET_CURRENT_RECIPES (state, payload) {
+    state.currentRecipes = payload
+  },
+  SET_CURRENT_RECIPE (state, payload) {
+    state.currentRecipe = payload
+  }
+}
 
 export const actions = {
-  async search ({ commit }, query) {
+  async search (state, query) {
+    const searchUrl = 'https://api.spoonacular.com/recipes/complexSearch?apiKey=6411032cc1b64ea0a7269e0da6e7fb58&query='
     const recipes = await this.$axios.$get(`${searchUrl}${query}`)
-    state.currentRecipes = recipes
+    state.commit('SET_CURRENT_RECIPES', recipes)
+  },
+  async getRandomRecipes (state) {
+    const recipes = await this.$axios.$get('https://api.spoonacular.com/recipes/random?number=10&tags=vegetarian,dessert&apiKey=6411032cc1b64ea0a7269e0da6e7fb58')
+    state.commit('SET_CURRENT_RECIPES', recipes)
+  },
+  async getCurrentRecipe (state, id) {
+    const url = `https://api.spoonacular.com/recipes/${id}/information?includeNutrition=false&apiKey=6411032cc1b64ea0a7269e0da6e7fb58`
+    const recipe = await this.$axios.$get(url)
+    state.commit('SET_CURRENT_RECIPE', recipe)
   }
 }

@@ -1,10 +1,10 @@
 <template>
   <div class="flex justify-between row-span-1">
-    <div class="flex flex-col text-lg p-8">
+    <div class="flex flex-col text-lg px-8">
       <h1 class="uppercase text-yellow-600">
         {{ currentRecipe.dishTypes[0] }}
       </h1>
-      <h1 class="text-5xl font-bold">
+      <h1 class="text-6xl font-bold title">
         {{ currentRecipe.title }}
       </h1>
       <!-- Rating -->
@@ -29,3 +29,9 @@ export default {
   computed: mapState(['currentRecipe'])
 }
 </script>
+
+<style >
+  .title {
+    font-family: 'Playfair Display', serif;
+  }
+</style>
