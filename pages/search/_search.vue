@@ -1,8 +1,8 @@
 <template>
-  <div class="container w-screen">
+  <div class="container w-screen flex flex-col justify-center">
     <Navbar :search="search" />
-    <div class="flex justify-center w-screen">
-      <div class="grid grid-cols-4 gap-4 w-3/4">
+    <div class="flex justify-center w-screen lg:w-screen">
+      <div class="container grid w-full lg:grid-cols-4 gap-4 lg:w-3/4">
         <RecipeCard v-for="recipe in $store.state.currentRecipes.results" :key="recipe.id" :recipe="recipe" />
       </div>
     </div>

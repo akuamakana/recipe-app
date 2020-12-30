@@ -1,5 +1,5 @@
 <template>
-  <div class="p-4 text-black flex flex-col justify-between">
+  <div class="p-4 text-black w-full flex flex-col justify-between">
     <!-- Recipe Title -->
     <h1 class="mb-2 text-xl text-center font-bold">
       {{ recipe.title }}

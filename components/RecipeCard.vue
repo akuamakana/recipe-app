@@ -1,6 +1,6 @@
 /* eslint-disable vue/require-prop-types */
 <template>
-  <div class="grid container w-full rounded-lg shadow-lg bg-white">
+  <div class="lg:grid flex container w-full lg:rounded-lg shadow-lg bg-white">
     <RecipeCardImage :recipe="recipe" />
     <RecipeCardText :recipe="recipe" @goToRecipe="loadRecipe" />
   </div>

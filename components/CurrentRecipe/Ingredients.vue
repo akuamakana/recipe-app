@@ -1,5 +1,6 @@
 <template>
-  <div class="bg-white rounded-lg text-black p-16 text-2xl h-full shadow-lg overflow-auto">
+  <div class="lg:bg-white rounded-lg lg:text-black lg:p-16 px-8 text-2xl h-full shadow-lg overflow-auto">
+    <h1 class="text-5xl font-bold mb-2">Ingredients</h1>
     <p v-for="ingredient in currentRecipe.extendedIngredients" :key="ingredient.id" class="my-2">
       {{ ingredient.amount }} {{ ingredient.unit }} {{ ingredient.name }}
     </p>

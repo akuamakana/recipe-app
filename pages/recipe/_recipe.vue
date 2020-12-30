@@ -1,10 +1,10 @@
 <template>
-  <div class="grid grid-rows-3 grid-cols-3 gap-4 p-16 h-screen overflow-hidden">
-    <div class="grid grid-flow-row grid-rows-3 gap-8 row-span-3 col-span-2">
+  <div class="flex flex-col lg:grid lg:grid-rows-3 lg:grid-cols-3 lg:gap-4 lg:p-16 lg:h-screen lg:overflow-hidden">
+    <div class="lg:grid lg:grid-flow-row lg:grid-rows-3 lg:gap-8 lg:row-span-3 lg:col-span-2">
       <Header />
       <Steps />
     </div>
-    <div class="row-span-3">
+    <div class="lg:row-span-3">
       <Ingredients />
     </div>
   </div>
